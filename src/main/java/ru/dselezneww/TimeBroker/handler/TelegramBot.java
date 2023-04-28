@@ -21,7 +21,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             @Value("${bot.token}")String token,
             TelegramBotsApi telegramBotsApi) {
         super(token);
-        System.out.println(name + token);
         this.name = name;
         this.telegramBotApi = telegramBotsApi;
     }
@@ -36,6 +35,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         var msg = update.getMessage();
         var user = msg.getFrom();
         var id = user.getId();
+        System.out.println(msg.getText());
         copyMessage(id, msg.getMessageId());
     }
 
