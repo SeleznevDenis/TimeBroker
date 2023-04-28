@@ -17,10 +17,11 @@ public class TelegramBot extends TelegramLongPollingBot {
     private final TelegramBotsApi telegramBotApi;
 
     public TelegramBot(
-            @Value("bot.name")String name,
-            @Value("bot.token")String token,
+            @Value("${bot.name}")String name,
+            @Value("${bot.token}")String token,
             TelegramBotsApi telegramBotsApi) {
         super(token);
+        System.out.println(name + token);
         this.name = name;
         this.telegramBotApi = telegramBotsApi;
     }
