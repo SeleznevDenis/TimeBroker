@@ -36,6 +36,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         var user = msg.getFrom();
         var id = user.getId();
         System.out.println(msg.getText());
+        System.out.println("---------");
         copyMessage(id, msg.getMessageId());
     }
 
